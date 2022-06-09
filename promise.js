@@ -6,9 +6,7 @@ const promiseOutput = async (emosi) => {
     const dataIXX = await promiseTheaterIXX();
     const dataVGC = await promiseTheaterVGC();
     const allData = [...dataIXX, ...dataVGC];
-    const result = allData.filter((e) => {
-      if (e.hasil === emosi) return e;
-    });
+    const result = allData.filter((e) => e.hasil === emosi);
     return result.length;
   } catch (error) {
     console.log(error);
